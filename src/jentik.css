@@ -1,0 +1,104 @@
+#jentik {
+	width: 100%;
+	display: block;
+	font-family: sans-serif;
+	background: #fff;
+	color: #333;
+	border: 1px solid #ddd;
+	font-size: 1em;
+}
+
+#jentik  .kotak {
+	padding: 0px 10px 10px 10px;
+}
+
+#jentik .tabs {
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#jentik .tabs .tab1, #jentik .tabs .tab2 {
+	color: #fff;
+	display: inline-block;
+	padding: 0px;
+	width: 50%;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	cursor: pointer;
+}
+
+#jentik .tabs .tab1 {
+	background: #d9534f;
+}
+
+#jentik .tabs .tab2 {
+	background: #3B8BBA;
+}
+
+#jentik .tabs .aktip2, #jentik .tabs .aktip1 {
+	background: #fff;
+	color: #333;
+	cursor: auto
+}
+
+#jentik  .title {
+	display: block;
+	margin-top: 15px
+}
+
+#jentik  input {
+	display: block;
+	margin-top: 5px;
+	width: 100%;
+	border: 1px solid #ddd;
+	padding:10px;
+	box-sizing: border-box
+}
+
+#jentik .cek_ongkir, #jentik .cek_resi {
+	background: #e6d903;
+	border: none;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top: 15px
+}
+
+#jentik #jentik-result {
+	background: #f1f1f1;
+	border-top: 1px solid #ddd;
+	padding: 10px;
+	font-size: 0.8em;
+	
+}
+
+#jentik table {
+	width: 100%
+}
+
+#jentik p {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	margin: 10px 0px 10px 0px
+}
+
+#jentik td {
+	border: 1px solid #ddd;
+	padding: 5px
+}
+
+#jentik #footer {
+	padding: 5px;
+	padding: 5px;
+	text-align: center;
+	font-size: 0.7em
+}
+
+#jentik #footer a {
+	color: #777;
+	text-decoration: none
+}
