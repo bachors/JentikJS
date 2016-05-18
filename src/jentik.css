@@ -19,11 +19,22 @@
 	text-transform: uppercase;
 }
 
-#jentik .tabs .tab1, #jentik .tabs .tab2 {
+#jentik .tabs .tab1 {
 	color: #fff;
 	display: inline-block;
 	padding: 0px;
 	width: 50%;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	cursor: pointer;
+}
+
+#jentik .tabs .tab2 {
+	color: #fff;
+	display: inline-block;
+	padding: 0px;
+	width: 33.3%;
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
