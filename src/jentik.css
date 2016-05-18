@@ -19,22 +19,10 @@
 	text-transform: uppercase;
 }
 
-#jentik .tabs .tab1 {
+#jentik .tabs .tab1, #jentik .tabs .tab2 {
 	color: #fff;
 	display: inline-block;
 	padding: 0px;
-	width: 50%;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	cursor: pointer;
-}
-
-#jentik .tabs .tab2 {
-	color: #fff;
-	display: inline-block;
-	padding: 0px;
-	width: 33.3%;
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -43,10 +31,12 @@
 
 #jentik .tabs .tab1 {
 	background: #d9534f;
+	width: 50%;
 }
 
 #jentik .tabs .tab2 {
 	background: #3B8BBA;
+	width: 33.333%;
 }
 
 #jentik .tabs .aktip2, #jentik .tabs .aktip1 {
