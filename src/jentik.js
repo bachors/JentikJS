@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 var jentik = function() {
-    $('#jentik').html('<div class="tabs"><div class="tab1 aktip1">ongkir</div><div class="tab1">tracking</div></div><div class="tabs"><div class="tab2 aktip2">jne</div><div class="tab2">tiki</div></div><span id="jentik-anu" style="display:none">ongkir</span><div class="kotak"><div id="kotak-ongkir"><div id="kotak-ongkir-tiki" style="display:none" title="Cek Ongkir TIKI"><span class="title">Kota Asal</span><input type="text" id="tiki_dari" list="rute_tiki_dari" placeholder="Bandung"/><datalist id="rute_tiki_dari"></datalist><span class="title">Kota Tujuan</span><input type="text" id="tiki_ke" list="rute_tiki_ke" placeholder="Surabaya"/><datalist id="rute_tiki_ke"></datalist><span class="title">Berat (Kg)</span><input type="text" id="tiki_kg" placeholder="4"/><input type="submit" class="cek_ongkir" data-jentik="tiki" value="Cek Ongkir"/></div><div id="kotak-ongkir-jne" title="Cek Ongkir JNE"><span class="title">Kota Asal</span><input type="text" id="jne_dari" list="rute_jne_dari" placeholder="Bandung"/><datalist id="rute_jne_dari"></datalist><span class="title">Kota Tujuan</span><input type="text" id="jne_ke" list="rute_jne_ke" placeholder="Surabaya"/><datalist id="rute_jne_ke"></datalist><span class="title">Berat (Kg)</span><input type="text" id="jne_kg" placeholder="4"/><input type="submit" class="cek_ongkir" data-jentik="jne" value="Cek Ongkir"/></div></div><div id="kotak-tracking"><div id="kotak-tracking-tiki" style="display:none" title="Cek Tracking TIKI"><span class="title">Nomor Resi</span><input type="text" id="tiki_resi" placeholder="xxx"/><input type="submit" class="cek_resi" data-jentik="tiki" value="Cek Resi"/></div><div id="kotak-tracking-jne" style="display:none" title="Cek Tracking JNE"><span class="title">Nomor Resi</span><input type="text" id="jne_resi" placeholder="xxx"/><input type="submit" class="cek_resi" data-jentik="jne" value="Cek Resi"/></div></div></div><div id="jentik-output"></div><div id="footer"><a href="https://github.com/bachors/JentikJS" class="jgf" target="_blank">Made with<3</a></div>');
+    $('#jentik').html('<div class="tabs"><div class="tab1 aktip1">ongkir</div><div class="tab1">tracking</div></div><div class="tabs"><div class="tab2 aktip2">jne</div><div class="tab2">tiki</div><div class="tab2">pos</div></div><span id="jentik-anu" style="display:none">ongkir</span><div class="kotak"><div id="kotak-ongkir"><div id="kotak-ongkir-tiki" style="display:none" title="Cek Ongkir TIKI"><span class="title">Kota Asal</span><input type="text" id="tiki_dari" list="rute_tiki_dari" placeholder="Bandung"/><datalist id="rute_tiki_dari"></datalist><span class="title">Kota Tujuan</span><input type="text" id="tiki_ke" list="rute_tiki_ke" placeholder="Surabaya"/><datalist id="rute_tiki_ke"></datalist><span class="title">Berat (Kg)</span><input type="text" id="tiki_kg" placeholder="4"/><input type="submit" class="cek_ongkir" data-jentik="tiki" value="Cek Ongkir"/></div><div id="kotak-ongkir-jne" title="Cek Ongkir JNE"><span class="title">Kota Asal</span><input type="text" id="jne_dari" list="rute_jne_dari" placeholder="Bandung"/><datalist id="rute_jne_dari"></datalist><span class="title">Kota Tujuan</span><input type="text" id="jne_ke" list="rute_jne_ke" placeholder="Surabaya"/><datalist id="rute_jne_ke"></datalist><span class="title">Berat (Kg)</span><input type="text" id="jne_kg" placeholder="4"/><input type="submit" class="cek_ongkir" data-jentik="jne" value="Cek Ongkir"/></div><div id="kotak-ongkir-pos" style="display:none" title="Cek Ongkir POS Indonesia"><p align="center">Coming Soon..</p></div></div><div id="kotak-tracking"><div id="kotak-tracking-tiki" style="display:none" title="Cek Tracking TIKI"><span class="title">Nomor Resi</span><input type="text" id="tiki_resi" placeholder="xxx"/><input type="submit" class="cek_resi" data-jentik="tiki" value="Cek Resi"/></div><div id="kotak-tracking-jne" style="display:none" title="Cek Tracking JNE"><span class="title">Nomor Resi</span><input type="text" id="jne_resi" placeholder="xxx"/><input type="submit" class="cek_resi" data-jentik="jne" value="Cek Resi"/></div><div id="kotak-tracking-pos" style="display:none" title="Cek Tracking POS Indonesia"><span class="title">Nomor Resi</span><input type="text" id="pos_resi" placeholder="xxx"/><input type="submit" class="cek_resi" data-jentik="pos" value="Cek Resi"/></div></div></div><div id="jentik-output"></div><div id="footer"><a href="https://github.com/bachors/JentikJS" class="jgf" target="_blank">Made with<3</a></div>');
     $('body').on('click', '#jentik .tab1', function() {
         var a = $(this).html(),
             tab2 = $('#jentik .aktip2').html();
@@ -36,10 +36,16 @@ var jentik = function() {
         $('#jentik .tab2').removeClass('aktip2');
         if (a == 'jne') {
             $('#jentik #kotak-' + anu + '-tiki').css('display', 'none');
-            $('#jentik #kotak-' + anu + '-jne').css('display', 'block')
+            $('#jentik #kotak-' + anu + '-pos').css('display', 'none');
+            $('#jentik #kotak-' + anu + '-jne').css('display', 'block');
         } else if (a == 'tiki') {
             $('#jentik #kotak-' + anu + '-jne').css('display', 'none');
-            $('#jentik #kotak-' + anu + '-tiki').css('display', 'block')
+            $('#jentik #kotak-' + anu + '-pos').css('display', 'none');
+            $('#jentik #kotak-' + anu + '-tiki').css('display', 'block');
+        } else if (a == 'pos') {
+            $('#jentik #kotak-' + anu + '-jne').css('display', 'none');
+            $('#jentik #kotak-' + anu + '-tiki').css('display', 'none');
+            $('#jentik #kotak-' + anu + '-pos').css('display', 'block');
         }
         $(this).addClass('aktip2');
         $('#jentik-output').html('');
@@ -105,7 +111,14 @@ var jentik = function() {
     $('body').on('click', '.cek_resi', function() {
         $('#jentik-output').html('<p>Wait..</p>');
         var a = $(this).data('jentik'),
-            resi = (a == 'jne' ? $("#jne_resi").val() : $("#tiki_resi").val());
+            resi = '';
+			if(a == 'jne'){
+				resi = $("#jne_resi").val();
+			}else if(a == 'tii'){
+				resi = $("#tiki_resi").val();
+			}else if(a == 'pos'){
+				resi = $("#pos_resi").val();
+			}
         cekresi(a, resi);
         return false
     });
@@ -177,8 +190,7 @@ var jentik = function() {
             crossDomain: true,
             dataType: 'json'
         }).done(function(d) {
-            var e = '',
-				w = '';
+            var e = '';
             if (d.status == 'success') {
                 var f = (d.data.detail.tujuan.nama == undefined ? '' : d.data.detail.tujuan.nama),
                     namaasal = (d.data.detail.asal.nama == undefined ? '' : d.data.detail.asal.nama);
@@ -187,18 +199,20 @@ var jentik = function() {
                 e += '<tr><td>Status:</td><td>' + d.data.detail.status + '</td></tr>';
                 e += '<tr><td>No Resi:</td><td>' + d.data.detail.no_resi + '</td></tr>';
                 e += '<tr><td>Service:</td><td>' + d.data.detail.service + '</td></tr>';
-                e += '<tr><td>Tanggal:</td><td>' + d.data.detail.tanggal + '</td></tr>';
+				if (g == 'tiki' || g == 'jne') {
+					e += '<tr><td>Tanggal:</td><td>' + d.data.detail.tanggal + '</td></tr>';
+				}
                 e += '<tr><td>Asal:</td><td>' + d.data.detail.asal.alamat + '<br>' + namaasal + '</td></tr>';
                 e += '<tr><td>Tujuan:</td><td>' + d.data.detail.tujuan.alamat + '<br>' + f + '</td></tr>';
                 e += '</table>';
                 e += '<p>Riwayat</p>';
                 e += '<table>';
                 if (g == 'tiki') {
-					w += 'http://tiki-online.com';
-                    e += '<tr><td>TANGGAL</td><td>WAKTU</td><td>STATUS</td><td>LOKASI</td><td>KETERANGAN</td></tr>'
+					e += '<tr><td>TANGGAL</td><td>WAKTU</td><td>STATUS</td><td>LOKASI</td><td>KETERANGAN</td></tr>'
                 } else if (g == 'jne') {
-					w += 'http://www.jne.co.id';
-                    e += '<tr><td>TANGGAL</td><td>LOKASI</td><td>KETERANGAN</td></tr>'
+					e += '<tr><td>TANGGAL</td><td>LOKASI</td><td>KETERANGAN</td></tr>'
+                } else if (g == 'pos') {
+					e += '<tr><td>TANGGAL</td><td>STATUS</td><td>LOKASI</td><td>KETERANGAN</td></tr>'
                 }
                 $.each(d.data.riwayat, function(i, c) {
                     e += '<tr>';
@@ -207,11 +221,12 @@ var jentik = function() {
                     });
                     e += '</tr>'
                 });
-                e += '</table>'
+                e += '</table>';
+				e += '<p>' + d.website + '</p>';
             } else {
                 e += d.status + ': ' + d.pesan
             }
-            $('#jentik-output').html('<div id="jentik-result">' + e + '<p>' + w + '</p></div>')
+            $('#jentik-output').html('<div id="jentik-result">' + e + '</div>')
         })
     }
 }
