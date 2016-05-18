@@ -1,5 +1,5 @@
 # JentikJS
-jQuery plugin untuk membuat widget mengecek ongkir atau tracking TIKI &amp; JNE
+jQuery plugin untuk membuat widget mengecek ongkir atau tracking TIKI, JNE &amp; POS Indonesia
 <h3>USAGE:</h3>
 <pre>&lt;!-- CSS --&gt;
 &lt;link type="text/css" rel="stylesheet" href="src/jentik.css" /&gt;
