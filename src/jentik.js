@@ -114,7 +114,7 @@ var jentik = function() {
             resi = '';
 			if(a == 'jne'){
 				resi = $("#jne_resi").val();
-			}else if(a == 'tii'){
+			}else if(a == 'tiki'){
 				resi = $("#tiki_resi").val();
 			}else if(a == 'pos'){
 				resi = $("#pos_resi").val();
@@ -192,23 +192,28 @@ var jentik = function() {
         }).done(function(d) {
             var e = '';
             if (d.status == 'success') {
-                var f = (d.data.detail.tujuan.nama == undefined ? '' : d.data.detail.tujuan.nama),
-                    namaasal = (d.data.detail.asal.nama == undefined ? '' : d.data.detail.asal.nama);
+                var namaasal = (d.data.detail.asal.nama == undefined ? '' : d.data.detail.asal.nama);
                 e += '<p>Detail</p>';
                 e += '<table>';
                 e += '<tr><td>Status:</td><td>' + d.data.detail.status + '</td></tr>';
                 e += '<tr><td>No Resi:</td><td>' + d.data.detail.no_resi + '</td></tr>';
-                e += '<tr><td>Service:</td><td>' + d.data.detail.service + '</td></tr>';
+				if (g == 'pos' || g == 'jne') {
+					e += '<tr><td>Service:</td><td>' + d.data.detail.service + '</td></tr>';
+				}
 				if (g == 'tiki' || g == 'jne') {
 					e += '<tr><td>Tanggal:</td><td>' + d.data.detail.tanggal + '</td></tr>';
 				}
                 e += '<tr><td>Asal:</td><td>' + d.data.detail.asal.alamat + '<br>' + namaasal + '</td></tr>';
-                e += '<tr><td>Tujuan:</td><td>' + d.data.detail.tujuan.alamat + '<br>' + f + '</td></tr>';
+				if (g == 'pos' || g == 'jne') {
+					var f = (d.data.detail.tujuan.nama == undefined ? '' : d.data.detail.tujuan.nama),
+					xx = (d.data.detail.tujuan.alamat == undefined ? '' : d.data.detail.tujuan.alamat);
+					e += '<tr><td>Tujuan:</td><td>' + xx + '<br>' + f + '</td></tr>';
+				}
                 e += '</table>';
                 e += '<p>Riwayat</p>';
                 e += '<table>';
                 if (g == 'tiki') {
-					e += '<tr><td>TANGGAL</td><td>WAKTU</td><td>STATUS</td><td>LOKASI</td><td>KETERANGAN</td></tr>'
+					e += '<tr><td>TANGGAL</td><td>STATUS</td><td>LOKASI</td></tr>'
                 } else if (g == 'jne') {
 					e += '<tr><td>TANGGAL</td><td>LOKASI</td><td>KETERANGAN</td></tr>'
                 } else if (g == 'pos') {
